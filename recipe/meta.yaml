@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -42,7 +42,17 @@ about:
   license: MIT
   license_file:
     - LICENSE
+  dev_url: https://github.com/caronc/apprise
+  doc_url: https://github.com/caronc/apprise/blob/master/README.md
 
 extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
+    - avoid_noarch
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/95756
+    reason: Dependency for prefect
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - thewchan
