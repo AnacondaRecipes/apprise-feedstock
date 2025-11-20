@@ -19,6 +19,7 @@ requirements:
     - babel
     - pip
     - python >=3.6
+    - setuptools
   run:
     - click >=5.0
     - markdown
