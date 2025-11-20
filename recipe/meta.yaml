@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - babel
     - pip
     - python >=3.6
+    - setuptools
   run:
     - click >=5.0
     - markdown
@@ -39,10 +40,21 @@ test:
 about:
   home: https://github.com/caronc/apprise
   summary: Push Notifications that work with just about every platform
+  description: Push Notifications that work with just about every platform
   license: MIT
-  license_file:
-    - LICENSE
+  license_file: LICENSE
+  dev_url: https://github.com/caronc/apprise
+  doc_url: https://github.com/caronc/apprise/blob/master/README.md
 
 extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
+    - avoid_noarch
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/95281
+    reason: Dependency for prefect
+  recipe-maintainers:
+    - ianaobi
+    - bkreider
   recipe-maintainers:
     - thewchan
