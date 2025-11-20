@@ -41,8 +41,7 @@ about:
   home: https://github.com/caronc/apprise
   summary: Push Notifications that work with just about every platform
   license: MIT
-  license_file:
-    - LICENSE.txt
+  license_file: LICENSE.txt
   dev_url: https://github.com/caronc/apprise
   doc_url: https://github.com/caronc/apprise/blob/master/README.md
 
